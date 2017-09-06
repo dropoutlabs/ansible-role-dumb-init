@@ -1,0 +1,12 @@
+---
+# tasks file for dumb-init
+- get_url:
+    url: https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64.deb
+    dest: /tmp
+    # XXX
+    validate_certs: false
+
+- command: dpkg -i dumb-init_1.2.0_amd64.deb
+  args:
+    chdir: /tmp
+
